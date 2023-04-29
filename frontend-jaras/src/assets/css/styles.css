@@ -1,0 +1,139 @@
+@font-face{
+    font-family: 'jarasfont';
+    src: url(src/assets/fonts/Sacramento-Regular.ttf);
+ }
+* {
+    margin: 0px;      
+    padding: 0px;     
+    list-style: none; 
+    text-decoration: none;
+}
+.decnavi{
+    display:none
+}
+header{
+    background: red;
+    margin-top: 0px;
+    height: 154px;
+}
+#section-p{
+    width: 100%;
+}
+.logo{
+    font-family: 'jarasfont',Arial, Helvetica, sans-serif;
+    font-size: 60px;
+}
+    .logo ul{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        padding-block: 10px;
+    }
+    .logo img{
+        font-size: 300px;
+        height: 90px;
+        width: 110px;
+        transition: 1000ms;
+    }
+    .logo img:hover{
+        transform: scale(1.2,1.2);
+        transition: 1000ms;
+    }
+    .logo-negro,.logo-rosa{
+        display: none;
+    }
+        .logo-blanco{
+            display: block;
+        }
+.nav{
+    display: block;
+    background: green;
+    font-size: 30px;
+    font-size: 25px;
+}
+    .nav ul{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        align-items: center;    
+    }
+        .nav li{
+            padding: 4px;
+            padding-inline: 15px;
+        }
+
+#login-social{
+    background: burlywood;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    #login{
+        font-size: 20px;
+        padding: 5px;
+    }
+        #login ul{
+            display: flex;
+            align-items: center;
+        }
+            #login li{
+                padding: 5px;
+                margin-inline: 2px;
+                border-radius: 20px;
+                border: 1px solid;
+            }
+    .s-c-s{
+        display: flex;
+        align-items: center;
+    }
+        #search ul{
+            display: flex;
+            align-items: center;
+        }
+            #search input[type='search']{
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border: 1px solid;
+                padding: 2px;
+            }
+            .buscar{
+                background: transparent;
+                border: 1px solid;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                padding: 1px;
+                font-size: 15px;
+                padding-inline: 7px;
+            }
+            .log-lupa{
+                display: none;
+            }
+        #carrito{
+            padding-inline: 30px;
+            font-size: 20px;
+        }
+
+        #social{
+            padding-right: 10px;
+        }
+            #social ul{
+                display: flex;
+                align-items: center;
+            }
+                #social li{
+                    padding-inline: 6px;
+                }
+
+.menu-res{
+    display: none;
+}
+
+#menu-oculto{
+    display: none;
+}
+
+/* Controles de slider */
+.bx-pager,.bx-controls-auto{
+    display: none;
+}

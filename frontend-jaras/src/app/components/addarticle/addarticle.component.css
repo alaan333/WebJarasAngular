@@ -1,0 +1,23 @@
+.container-add{
+    width: 60%;
+}
+.container-add h2{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.message{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 70%;
+}
+.success{
+    color: rgb(5, 210, 5);
+}
+.failed{
+    color: red;
+}
+option{
+    font-size: 20px;
+}

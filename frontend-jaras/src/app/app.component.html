@@ -1,0 +1,99 @@
+<div class="decnavi">
+  <ul>
+    <li><img src="../assets/imagesforcss/pngwing.png" class="imgnavidad-izq"></li>
+    <li><img src="../assets/imagesforcss/adornoderecho.png" class="imgnavidad-der"></li>
+  </ul>
+</div>
+
+<header>
+  
+  <div class="logo">
+    <ul>
+       <p>Jaras</p>
+       <img class="logo-negro" src="../assets/imagesforcss/logotransparente.png" [routerLink]="['/inicio']">
+       <img class="logo-blanco" src="../assets/imagesforcss/logo-white.png" [routerLink]="['/inicio']">
+       <img class="logo-rosa" src="../assets/imagesforcss/logo-pink.png" [routerLink]="['/inicio']">
+       <p>Boutique</p>
+      </ul>
+  </div>
+  
+  <div class="nav">
+    <ul>
+      <li><a [routerLink]="['/inicio']" [routerLinkActive]="['actived']">Inicio</a></li>
+      <li><a [routerLink]="['/productos']"[routerLinkActive]="['actived']">Productos</a></li>
+      <li><a href="#"[routerLinkActive]="['actived']">Contacto</a></li>
+    </ul>    
+  </div> 
+</header>      
+
+<section id="section-p">
+  <div id="login-social" class="login-social-stickly">
+
+    <div id="login">
+      <ul>
+        <li><a href="#">Iniciar sesión</a></li>
+        <li><a [routerLink]="['/registro']">Registrarse</a></li>
+        <li class="addarticle-css"><a [routerLink]="['/agregar-articulo']" >Añadir articulo</a></li>
+      </ul>
+    </div>
+
+    <button class="menu-res"><i class="fa-solid fa-bars"></i></button>
+
+    <div class="s-c-s">
+      <div id="search">
+        <ul>
+          <li><input type="search"></li>
+          <li><button class="buscar">Buscar</button></li>
+          <li><button class="log-lupa"><i class="fa-solid fa-magnifying-glass"></i></button></li>
+        </ul>
+      </div>
+      <div id="carrito">
+        <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </div>
+      <div id="social">
+        <ul>
+          <li><p>Seguinos</p></li>
+          <li><a href="https://www.instagram.com/jaras.boutique/"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div id="menu-oculto">
+    <ul>
+      <li><a [routerLink]="['/inicio']" [routerLinkActive]="['actived']">Inicio</a></li>
+      <li><a [routerLink]="['/productos']"[routerLinkActive]="['actived']">Productos</a></li>
+      <li><a href="#"[routerLinkActive]="['actived']">Contacto</a></li>
+      <li><a href="#">Iniciar sesión</a></li>
+      <li><a [routerLink]="['/registro']">Registrarse</a></li>
+      <li class="addarticle-css"><a [routerLink]="['/agregar-articulo']" >Añadir articulo</a></li>
+    </ul>
+  </div>
+
+  <div id="select-theme">
+    <ul>
+      <li><button class="theme-pink"><i class="fa-regular fa-eye"></i></button></li>
+      <li><button class="theme-blue"><i class="fa-regular fa-eye"></i></button></li>
+      <li><button class="theme-green"><i class="fa-regular fa-eye"></i></button></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <h1>Publicidad</h1>
+  </div>
+  <div>
+    <h1>Derechos y autos</h1>
+  </div>
+</footer>
+
+
+      
+      
+      

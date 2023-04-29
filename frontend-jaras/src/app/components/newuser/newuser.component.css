@@ -1,0 +1,9 @@
+.container-newuser{
+    width: 60%;
+}
+
+.container-newuser h2{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+}
