@@ -1,1 +1,30 @@
-<p>detail works!</p>
+<!-- <h1>{{article.color}}</h1>
+<img src="{{url+'/get-image/'+article.image}}" *ngIf="article.image" > -->
+<div class="container-detail">
+    <div class="detail">
+        <ul>
+            <li class="imgdetail">
+                <img src="{{url+'/get-image/'+article.image}}" *ngIf="article.image" >
+            </li>
+            <li class="menu-detail">
+                <div class="detail-description">
+                    <h2>${{article.price}}</h2>
+                    <h3>{{article.description}}</h3>
+                    <h3>Talle {{article.size}}</h3>
+                </div>
+                <div class="menu-buttons">
+                    <div class="buy-menu">
+                        <button class="hover-button">Comprar</button>
+                        <button class="hover-button">Agregar al carrito</button>
+                    </div>
+                    <div class="del-edit">
+                        <button (click)="deleteArticle(article._id)" class="delete hover-button">Borrar</button>
+                        <button [routerLink]="['/editar/',article._id]" class="edit hover-button">Editar</button>
+                    </div>      
+                </div>     
+            </li>
+        </ul>
+     
+    </div>
+    
+</div>

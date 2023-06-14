@@ -1,0 +1,40 @@
+:root{
+    --verdejaras:rgb(102,136,59)
+}
+header{
+    background: var(--verdejaras);
+    color: white;
+}
+    .logo-rosa{
+        display: block !important;
+    }
+.nav{
+    background: var(--verdejaras);
+    border-bottom: 1px solid white;
+
+}
+    .nav a{
+        color: white;
+    }
+
+#login-social{
+    background: var(--verdejaras);
+}
+    #login a{
+        color: white;
+    }
+.s-c-s{
+    color: white;
+}
+    #search input{
+        border: 1px solid white;
+    }
+    #search button{
+        color: white;
+    }
+#carrito a{
+    color: white;
+}
+#social a{
+    color: white;
+}

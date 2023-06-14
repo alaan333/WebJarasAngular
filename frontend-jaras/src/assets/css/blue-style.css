@@ -1,0 +1,44 @@
+:root{
+    --azuljaras:rgb(10,57,75)
+}
+header{
+    background: var(--azuljaras);
+    color: white;
+}
+    .logo-blanco{
+        display: block !important;
+    }
+.nav{
+    background: var(--azuljaras);
+    border-bottom: 1px solid white;
+
+}
+    .nav a{
+        color: white;
+    }
+
+#login-social{
+    background: var(--azuljaras);
+}
+    #login a{
+        color: white;
+    }
+.s-c-s{
+    color: white;
+}
+    #search input{
+        border: 1px solid white;
+    }
+    #search button{
+        color: white;
+    }
+#carrito a{
+    color: white;
+}
+#social a{
+    color: white;
+}
+
+.container{
+    background-color: black;
+}

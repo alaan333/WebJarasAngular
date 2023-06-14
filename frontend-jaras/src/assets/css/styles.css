@@ -2,19 +2,26 @@
     font-family: 'jarasfont';
     src: url(src/assets/fonts/Sacramento-Regular.ttf);
  }
+:root{
+    --azuljaras:rgb(10,57,75);
+    --verdejaras:rgb(102,136,59);
+    --rosajaras: rgb(254,192,177);
+}
 * {
     margin: 0px;      
     padding: 0px;     
     list-style: none; 
     text-decoration: none;
 }
+
 .decnavi{
     display:none
 }
 header{
-    background: red;
     margin-top: 0px;
     height: 154px;
+    display: flex;
+    flex-direction: column;
 }
 #section-p{
     width: 100%;
@@ -40,31 +47,32 @@ header{
         transform: scale(1.2,1.2);
         transition: 1000ms;
     }
-    .logo-negro,.logo-rosa{
+    .logo-negro,.logo-rosa,.logo-blanco{
         display: none;
     }
-        .logo-blanco{
-            display: block;
-        }
 .nav{
     display: block;
-    background: green;
-    font-size: 30px;
     font-size: 25px;
+    height: 100%;
 }
     .nav ul{
         display: flex;
         justify-content: space-evenly;
         width: 100%;
-        align-items: center;    
+        align-items: center;   
+        margin-block: 4px; 
     }
         .nav li{
             padding: 4px;
             padding-inline: 15px;
+            border-radius: 25px;
+        }
+        .nav li:hover{
+            background: rgba(255,255,255,0.4);
+            transition: 1000ms;
         }
 
 #login-social{
-    background: burlywood;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,7 +89,11 @@ header{
                 padding: 5px;
                 margin-inline: 2px;
                 border-radius: 20px;
-                border: 1px solid;
+                font-size: 15px;
+            }
+            #login li:hover{
+                text-decoration: underline;
+                text-decoration-color: white;
             }
     .s-c-s{
         display: flex;
@@ -94,7 +106,6 @@ header{
             #search input[type='search']{
                 border-top-left-radius: 20px;
                 border-bottom-left-radius: 20px;
-                border: 1px solid;
                 padding: 2px;
             }
             .buscar{
@@ -105,6 +116,7 @@ header{
                 padding: 1px;
                 font-size: 15px;
                 padding-inline: 7px;
+                cursor: pointer;
             }
             .log-lupa{
                 display: none;
@@ -124,6 +136,42 @@ header{
                 #social li{
                     padding-inline: 6px;
                 }
+                #social a .fa-instagram:hover{
+                    color:orangered;
+                }
+                #social a .fa-facebook:hover{
+                    color:blue;
+                }
+
+.container{
+    margin-top: 0px;
+    background-size: 111% 100%;
+    background-position: -53px 0px;
+}
+
+#select-theme{
+    position: fixed;
+    top: 250px;
+    left: 0;
+}
+    #select-theme button{
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        border: 1px solid white;
+    }
+    #select-theme button:hover{
+        color: white;
+    }
+    .theme-pink{
+        background-color: var(--rosajaras);
+    }
+    .theme-blue{
+        background-color: var(--azuljaras);
+    }
+    .theme-green{
+        background-color: var(--verdejaras);
+    }
 
 .menu-res{
     display: none;

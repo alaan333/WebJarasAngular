@@ -1,0 +1,45 @@
+:root{
+    --rosajaras: rgb(254,192,177)
+}
+header{
+    background: var(--rosajaras);
+    color: black;
+}
+    .logo-negro{
+        display: block !important;
+    }
+.nav{
+    background: var(--rosajaras);
+    border-bottom: 1px solid white;
+}
+    .nav a{
+        color: white;
+    }
+
+#login-social{
+    background: var(--rosajaras);
+}
+    #login a{
+        color: white;
+    }
+.s-c-s{
+    color: white;
+}
+    #search input{
+        border: 1px solid white;
+    }
+    #search button{
+        color: white;
+    }
+#carrito a{
+    color: white;
+}
+#social a{
+    color: white;
+}
+.container{
+    background-image: url(../imagesforcss/body-image1.jpg);
+}
+.container-add h2,form{
+    background: var(--rosajaras)
+}

@@ -24,13 +24,15 @@
     width: 100%;
     padding-block: 30px;
     text-align: center;
-    margin-top: -40px;
-    margin-bottom: -40px;
+    margin-top: -60px;
 }
     .slogan h1{
         font-size: 70px;
         font-family: 'jarasfont',Arial, Helvetica, sans-serif;
-        color: black
+        color: white;
+        background: rgba(255, 255,255,0.3);
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
     }
 .article-home{
     width: 95%;
@@ -40,9 +42,12 @@
     .article-home ul{
         display: flex;
         height: 100%;
+        width: 90%;
+        margin-inline: auto;
         flex-wrap: wrap;
         padding-bottom: 70px;
         justify-content: space-between;
+        background: rgba(255, 255,255,0.3);
     }
         .article-home li{
             margin-top: 70px;

@@ -1,69 +1,72 @@
 <div class="container-add" *ngIf="article">
-    <h2>{{title}}</h2>
-    <form #articleForm="ngForm" (ngSubmit)="onSubmit(articleForm)">
-        <p>
-            <label for="image">Imagen</label>
-            <input type="file" name="image" placeholder="Subir imagen" (change)="fileChangeEvent($event)" required>
-        </p>
-        <p>
-            <label for="category">Categoria</label>
-            <select name="category" #category="ngModel" [(ngModel)]="article.category" required>
-                <option value="superior">Prenda superior</option>
-                <option value="inferior">Prenda inferior</option>
-                <option value="interior">Ropa interior</option>
-                <option value="conjunto">Conjunto</option>
-                <option value="baño">Traje de baño</option>
-                <option value="accesorio">Accesorio</option>
-                <option value="calzado">Calzado</option>
-                <option value="otro">Otro</option>
-            </select>
-            <span *ngIf="category.touched && !category.valid"> *Ingresar categoria</span>
-        </p>
-        <p>
-            <label for="type">Tipo de articulo</label>
-            <input type="text" name="type" #type="ngModel" [(ngModel)]="article.typeArticle" required>
-            <span *ngIf="type.touched && !type.valid"> *Ingresar tipo de articulo</span>
-        </p>
-        <p>
-            <label for="size">Talle</label>
-            <input type="text" name="size" #size="ngModel" [(ngModel)]="article.size" required>
-            <span *ngIf="size.touched && !size.valid"> *Ingresar talle</span>
-        </p>
-        <p>
-            <label for="season">Temporada</label>
-            <select name="season" #season="ngModel" [(ngModel)]="article.season" required>
-                <option value="noseason">Sin temporada</option>
-                <option value="ss">Primavera-Verano</option>
-                <option value="aw">Otoño-Invierno</option>
-            </select>
-            <span *ngIf="season.touched && !season.valid"> *Ingresar temporada</span>
-        </p>
-        <p>
-            <label for="color">Color</label>
-            <input type="text" name="color" #color="ngModel" [(ngModel)]="article.color">
-        </p>   
-        <p>
-            <label for="description">Descripcion breve</label>
-            <textarea name="description" #description="ngModel" [(ngModel)]="article.description" required></textarea>
-            <span *ngIf="description.touched && !description.valid"> *Ingresar descripción breve</span>
-        </p>
-        <p>
-            <label for="price">Precio</label>
-            <input type="number" name="price" #price="ngModel" [(ngModel)]="article.price" required>
-            <span *ngIf="price.touched && price.value==0"> *Ingresar precio</span>
-        </p>
-        <p>
-            <label for="offsale">Oferta</label>
-            <input type="number" name="offsale" #offsale="ngModel" [(ngModel)]="article.offsale">
-        </p>
-        
-        <input type="submit" value="Añadir" [disabled]="!articleForm.form.valid">
-        
-        <div class="message success" *ngIf="status=='success'">
-            <h1>El articulo se agrego correctamente</h1>
-        </div>
-        <div class="message failed" *ngIf="status=='failed'">
-            <h1>No se pudo agregar el articulo</h1>
-        </div>
-    </form>
+    <div class="cont-add">
+        <h2>{{title}}</h2>
+        <form #articleForm="ngForm" (ngSubmit)="onSubmit(articleForm)">
+            <p>
+                <label for="image">Imagen</label>
+                <input type="file" name="image" placeholder="Subir imagen" (change)="fileChangeEvent($event)" required>
+            </p>
+            <p>
+                <label for="category">Categoria</label>
+                <select name="category" #category="ngModel" [(ngModel)]="article.category" required>
+                    <option value="superior">Prenda superior</option>
+                    <option value="inferior">Prenda inferior</option>
+                    <option value="interior">Ropa interior</option>
+                    <option value="conjunto">Conjunto</option>
+                    <option value="baño">Traje de baño</option>
+                    <option value="accesorio">Accesorio</option>
+                    <option value="calzado">Calzado</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <span *ngIf="category.touched && !category.valid"> *Ingresar categoria</span>
+            </p>
+            <p>
+                <label for="type">Tipo de articulo</label>
+                <input type="text" name="type" #type="ngModel" [(ngModel)]="article.typeArticle" required>
+                <span *ngIf="type.touched && !type.valid"> *Ingresar tipo de articulo</span>
+            </p>
+            <p>
+                <label for="size">Talle</label>
+                <input type="text" name="size" #size="ngModel" [(ngModel)]="article.size" required>
+                <span *ngIf="size.touched && !size.valid"> *Ingresar talle</span>
+            </p>
+            <p>
+                <label for="season">Temporada</label>
+                <select name="season" #season="ngModel" [(ngModel)]="article.season" required>
+                    <option value="noseason">Sin temporada</option>
+                    <option value="ss">Primavera-Verano</option>
+                    <option value="aw">Otoño-Invierno</option>
+                </select>
+                <span *ngIf="season.touched && !season.valid"> *Ingresar temporada</span>
+            </p>
+            <p>
+                <label for="color">Color</label>
+                <input type="text" name="color" #color="ngModel" [(ngModel)]="article.color">
+            </p>   
+            <p>
+                <label for="description">Descripcion breve</label>
+                <textarea name="description" #description="ngModel" [(ngModel)]="article.description" required></textarea>
+                <span *ngIf="description.touched && !description.valid"> *Ingresar descripción breve</span>
+            </p>
+            <p>
+                <label for="price">Precio</label>
+                <input type="number" name="price" #price="ngModel" [(ngModel)]="article.price" required>
+                <span *ngIf="price.touched && price.value==0"> *Ingresar precio</span>
+            </p>
+            <p>
+                <label for="offsale">Oferta</label>
+                <input type="number" name="offsale" #offsale="ngModel" [(ngModel)]="article.offsale">
+            </p>
+            
+            <input type="submit" value="Añadir" [disabled]="!articleForm.form.valid">
+            
+            <div class="message success" *ngIf="status=='success'">
+                <h1>El articulo se agrego correctamente</h1>
+            </div>
+            <div class="message failed" *ngIf="status=='failed'">
+                <h1>No se pudo agregar el articulo</h1>
+            </div>
+        </form>
+    </div>
+    
 </div>

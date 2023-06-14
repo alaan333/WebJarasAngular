@@ -8,7 +8,7 @@ import { Global } from 'src/app/services/global';
 @Component({
   selector: 'app-edit',
   templateUrl: '../addarticle/addarticle.component.html',
-  styleUrls: ['./edit.component.css'],
+  styleUrls: ['../addarticle/addarticle.component.css'],
   providers:[ArticleService,UploadService]
 })
 export class EditComponent implements OnInit{

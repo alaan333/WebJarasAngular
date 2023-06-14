@@ -1,10 +1,32 @@
 .container-add{
-    width: 60%;
+    width: 80%;
+    margin-inline: auto;
+    height: 900px;
+}
+.cont-add{
+    padding-top: 15px;
 }
 .container-add h2{
-    padding: 10px;
+    margin-top: 5px;
+    padding: 5px;
+    padding-block: 10px;
+    padding-left: 3px;
     margin-bottom: 10px;
+    margin-left: 10px;
     width: 50%;
+}
+.container-add form{
+    margin-left: 10px;
+    padding: 5px;
+    width: 50%;
+}
+.container-add p{
+    padding-block: 3px;
+    padding-left: 3px;
+    font-size: 20px;
+}
+input[type="submit"]{
+    padding: 14px;
 }
 
 .message{

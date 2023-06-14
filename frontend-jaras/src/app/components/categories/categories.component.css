@@ -7,6 +7,12 @@
     text-transform: capitalize;
 }
 
+.container-category{
+    width: 90%;
+    margin-inline: auto;
+    background-color: rgba(255,255,255,0.5);
+}
+
 .container-category .li-articulos{
     height: 400px;
     margin-top: 30px;
