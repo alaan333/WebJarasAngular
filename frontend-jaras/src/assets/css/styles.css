@@ -185,3 +185,37 @@ header{
 .bx-pager,.bx-controls-auto{
     display: none;
 }
+
+    footer ul{
+        width: 90%;
+        margin-inline: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+        footer li{
+            width: 46%;
+            margin-inline: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+            .map{
+                overflow: hidden;
+            }
+                iframe{
+                    height: 100%;
+                    width: 100%;
+                }
+            .autor{
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                height: 30px;
+                width: 100%;
+                background-color: black;
+                color: white;
+                font-size: 10px;
+            }
+           

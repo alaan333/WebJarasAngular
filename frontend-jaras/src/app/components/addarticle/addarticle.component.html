@@ -57,7 +57,7 @@
                 <label for="offsale">Oferta</label>
                 <input type="number" name="offsale" #offsale="ngModel" [(ngModel)]="article.offsale">
             </p>
-            
+        
             <input type="submit" value="Añadir" [disabled]="!articleForm.form.valid">
             
             <div class="message success" *ngIf="status=='success'">

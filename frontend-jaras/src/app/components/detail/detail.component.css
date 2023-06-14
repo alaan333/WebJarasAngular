@@ -5,14 +5,12 @@
 }
     .detail{
         padding: 20px;
-        background-color: rgba(255,255,255,0.4);
     }
     .detail ul{
         display: flex;
         justify-content: space-around;
     }
     .imgdetail{
-        border: 3px solid black;
         height: 500px;
         width: 400px;
         overflow: hidden;
@@ -23,7 +21,6 @@
     }
     .menu-detail{
         width: 600px;
-        border: 1px solid black;
     }
         .detail-description{
             display: flex;
@@ -49,6 +46,7 @@
                     margin: 10px;
                     border-radius: 15px;
                     cursor: pointer;
+                    font-size: 15px;
                 }
             .del-edit{
                 display: flex;
@@ -69,5 +67,5 @@
                         border: 1px solid black;
                     }
             .hover-button:hover{
-                opacity: 0.7;
+                filter: brightness(1.07);
             }
