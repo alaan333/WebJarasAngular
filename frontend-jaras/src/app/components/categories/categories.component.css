@@ -46,6 +46,12 @@
 .container-category h3{        
     font-size: 25px;
 }
+    .without-articles{
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
 @media all and (max-width:900px){
     .container-category .li-articulos{

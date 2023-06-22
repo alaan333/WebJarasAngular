@@ -2,14 +2,14 @@
     --rosajaras: rgb(254,192,177)
 }
 header{
-    background: var(--rosajaras);
-    color: black;
+    background: black;
+    color: white;
 }
-    .logo-negro{
+    .logo-rosa{
         display: block !important;
     }
 .nav{
-    background: var(--rosajaras);
+    background: black;
     border-bottom: 1px solid white;
 }
     .nav a{
@@ -17,7 +17,7 @@ header{
     }
 
 #login-social{
-    background: var(--rosajaras);
+    background: black;
 }
     #login a{
         color: white;
@@ -38,10 +38,10 @@ header{
     color: white;
 }
 .container{
-    background-image: url(../imagesforcss/body-image1.jpg);
+    background-color: black;
 }
 .container-add h2,form{
-    background: var(--rosajaras)
+    background: black;
 }
 
 /* addarticle */

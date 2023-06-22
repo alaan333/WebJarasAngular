@@ -14,9 +14,6 @@
     text-decoration: none;
 }
 
-.decnavi{
-    display:none
-}
 header{
     margin-top: 0px;
     height: 154px;
@@ -28,7 +25,7 @@ header{
 }
 .logo{
     font-family: 'jarasfont',Arial, Helvetica, sans-serif;
-    font-size: 60px;
+    font-size: 40px;
 }
     .logo ul{
         display: flex;
@@ -38,7 +35,7 @@ header{
         padding-block: 10px;
     }
     .logo img{
-        font-size: 300px;
+        font-size: 200px;
         height: 90px;
         width: 110px;
         transition: 1000ms;
@@ -95,6 +92,10 @@ header{
                 text-decoration: underline;
                 text-decoration-color: white;
             }
+             #login a{
+                position: relative;
+                z-index: 3;
+             }
     .s-c-s{
         display: flex;
         align-items: center;
@@ -124,6 +125,8 @@ header{
         #carrito{
             padding-inline: 30px;
             font-size: 20px;
+            position: relative;
+            z-index: 3;
         }
 
         #social{
@@ -135,6 +138,10 @@ header{
             }
                 #social li{
                     padding-inline: 6px;
+                }
+                #social a,p{
+                    position: relative;
+                    z-index: 3;
                 }
                 #social a .fa-instagram:hover{
                     color:orangered;
@@ -153,6 +160,7 @@ header{
     position: fixed;
     top: 250px;
     left: 0;
+    z-index: 4;
 }
     #select-theme button{
         width: 25px;
@@ -172,6 +180,11 @@ header{
     .theme-green{
         background-color: var(--verdejaras);
     }
+    .theme-darkpink{
+        background-color: black;
+        color: var(--rosajaras);
+        display: none;
+    }
 
 .menu-res{
     display: none;
@@ -187,27 +200,35 @@ header{
 }
 
     footer ul{
-        width: 90%;
+        width: 100%;
         margin-inline: auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
         footer li{
-            width: 46%;
-            margin-inline: 20px;
-            height: 400px;
+            width: 43%;
+            margin-inline: 47px;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-            .map{
+            .map,.publicidad{
                 overflow: hidden;
             }
                 iframe{
                     height: 100%;
                     width: 100%;
                 }
+                .publicidad .bx-controls-direction{
+                    display: none;
+                }
+                .publicidad img{
+                    height: 500px;
+                    display: flex;
+                }
+
             .autor{
                 display: flex;
                 align-items: center;
@@ -215,7 +236,36 @@ header{
                 height: 30px;
                 width: 100%;
                 background-color: black;
-                color: white;
                 font-size: 10px;
             }
-           
+                .autor a{
+                    color: white;
+                    width: 22%;
+                    padding: 5px;
+                }
+                .autor h3:hover{    
+                    color: rgb(163, 5, 163);
+                }
+
+/* Decoracion navideña */
+.decnavi{
+    display:none;
+    position: absolute;
+    top: 0px;
+}
+    .decnavi ul{
+        display: flex;
+        justify-content: space-between;
+    }
+        .decnavi img{
+            position:absolute;
+            z-index: 2;
+        }
+            .imgnavidad-der{
+                height: 600px;
+                top: -10px;
+                left: 1170px;
+            }
+            .imgnavidad-izq{
+                height: 400px;
+            }

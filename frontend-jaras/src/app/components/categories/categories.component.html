@@ -3,14 +3,17 @@
         <ul>
             <select id="filtro" name="cate" (change)="getFiltro($event)">
                 <option value="all">Todos</option>
-                <option value="baño">Baño</option>
-                <option value="superior">Prenda superiro</option>
+                <option value="baño">Trajes de baño</option>
+                <option value="superior">Prendas superiores</option>
+                <option value="inferior">Prendas inferiores </option>
+                <option value="interior">Ropa interior</option>
+                <option value="calzado">Calzado</option>
             </select>
         </ul>
     </div>
 
     <ul id="ul-productos" >
-        <li *ngFor="let a of filtrado" class="li-articulos">
+        <li *ngFor="let a of allArticles" class="li-articulos">
             <h2>{{a.description}}</h2>
             <a class="image" [routerLink]="['/detalle/',a._id]">
                 <img src="{{url+'/get-image/'+a.image}}" *ngIf="a.image" >
@@ -18,5 +21,6 @@
             <h3>${{a.price}}</h3>
         </li>
     </ul>
+    <div *ngIf="status==false" class="without-articles"><h3>No hay articulos disponibles en esta categoria</h3></div>
 
 </div>
