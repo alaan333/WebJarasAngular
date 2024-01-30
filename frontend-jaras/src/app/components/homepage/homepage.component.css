@@ -35,6 +35,15 @@
         border-top: 2px solid white;
         border-bottom: 2px solid white;
     }
+    .slogan h2{
+        font-size: 35px;
+        font-family: 'jarasfont',Arial, Helvetica, sans-serif;
+        color: white;
+        background: rgba(255, 255,255,0.3);
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        margin-top: 70px;
+    }
 .article-home{
     width: 95%;
     margin-inline: auto;

@@ -4,13 +4,13 @@
     <div class="detail">
         <ul>
             <li class="imgdetail">
-                <img src="{{url+'/get-image/'+article.image}}" *ngIf="article.image" >
+                    <img src="{{url+'/get-image/'+article.image}}" *ngIf="article.image" >
             </li>
             <li class="menu-detail">
                 <div class="detail-description">
                     <h2>${{article.price}}</h2>
                     <h3>{{article.description}}</h3>
-                    <h3>Talle {{article.size}}</h3>
+                    <h3>Talle: {{article.size}}</h3>
                 </div>
                 <div class="menu-buttons">
                     <div class="buy-menu">

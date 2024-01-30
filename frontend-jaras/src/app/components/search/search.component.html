@@ -1,0 +1,15 @@
+<div class="container-category">
+
+    <ul *ngIf="status!=false" id="ul-productos" >
+        <h2>Resultado de busqueda</h2>
+        <li *ngFor="let a of all_articles" class="li-articulos">
+            <h2>{{a.description}}</h2>
+            <a class="image" [routerLink]="['/detalle/',a._id]">
+                <img src="{{url+'/get-image/'+a.image}}" *ngIf="a.image" >
+            </a>
+            <h3>${{a.price}}</h3>
+        </li>
+    </ul>
+    <div *ngIf="status==false" class="without-articles"><h3>Sin resultados de busqueda</h3></div>
+
+</div>

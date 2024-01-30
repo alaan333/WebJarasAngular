@@ -6,7 +6,7 @@ var port=3232;
 
 const password='GyNcBS8C0fXF5Rso'
 const url='mongodb+srv://AlanJaras:'+password+'@clusterzero.tamdwcu.mongodb.net/backendwebjaras'
-
+// mongodb+srv://AlanJaras:GyNcBS8C0fXF5Rso@clusterzero.tamdwcu.mongodb.net/backendwebjaras
 //para conectar al database
 mongoose.Promise=global.Promise;
 mongoose.set('strictQuery', true);
@@ -23,5 +23,5 @@ mongoose.connect(url)
         })
         //En el caso de que haya un error
         .catch(err=>{
-            console.log(err)
+            console.log(err,)
         })

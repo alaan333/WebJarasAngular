@@ -152,8 +152,8 @@ header{
 
 .container{
     margin-top: 0px;
-    background-size: 111% 100%;
-    background-position: -53px 0px;
+    background-size: 100%;
+    /* background-position: -53px 0px; */
 }
 
 #select-theme{
@@ -249,7 +249,6 @@ header{
 
 /* Decoracion navideña */
 .decnavi{
-    display:none;
     position: absolute;
     top: 0px;
 }

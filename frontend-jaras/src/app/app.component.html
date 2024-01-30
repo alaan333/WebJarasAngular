@@ -1,4 +1,5 @@
-<div class="decnavi">
+
+<div *ngIf="control" class="decnavi">
   <ul>
     <li><img src="../assets/imagesforcss/pngwing.png" class="imgnavidad-izq"></li>
     <li><img src="../assets/imagesforcss/adornoderecho.png" class="imgnavidad-der"></li>
@@ -42,11 +43,13 @@
     <div class="s-c-s">
       <div id="search">
         <ul>
-          <li><input type="search"></li>
-          <li><button class="buscar">Buscar</button></li>
+          <li><input type="search" [(ngModel)]="item_search" (keyup.enter)="getSearchArticles()" [routerLink]="['/search']"></li> 
+          <li><button class="buscar" [routerLink]="['/search']" (click)="getSearchArticles()">Buscar</button></li>
           <li><button class="log-lupa"><i class="fa-solid fa-magnifying-glass"></i></button></li>
         </ul>
       </div>
+      
+
       <div id="carrito">
         <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
       </div>

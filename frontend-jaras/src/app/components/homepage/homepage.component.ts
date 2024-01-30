@@ -7,7 +7,14 @@ declare var $:any;
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit{
+  public frase:string;
+  public slogan:string;
   
+  constructor(){
+    this.frase='Explora la sofisticación sin límites, donde cada prenda se convierte en parte de un capítulo de tu historia. Vive la moda con autenticidad y descubre la belleza que reside en tu estilo único'
+    this.slogan='Lo que de y mas...'
+  }
+
   ngOnInit(): void {
     $(document).ready(function(){
       $('.slider').bxSlider({

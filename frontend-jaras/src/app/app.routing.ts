@@ -1,4 +1,4 @@
-import { ModuleWithProviders, Component } from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
 
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -8,6 +8,7 @@ import { AddarticleComponent } from './components/addarticle/addarticle.componen
 import { NewuserComponent } from './components/newuser/newuser.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
+import { SearchComponent } from './components/search/search.component';
 
 const appRoutes: Routes=[
     {path:'inicio',component:HomepageComponent},
@@ -17,6 +18,7 @@ const appRoutes: Routes=[
     {path:'agregar-articulo',component:AddarticleComponent},
     {path:'detalle/:id',component:DetailComponent},
     {path:'editar/:id',component:EditComponent},
+    {path:'search',component:SearchComponent},
     {path:'**',component:HomepageComponent}
 ];
 

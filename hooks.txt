@@ -1,0 +1,3 @@
+OnInit: metodo (ngOnInit) que se ejecuta ni bien se carga el componente
+DoCheck: metodo (ngDoCheck) se ejecuta cada vez que se modifica algo en el componente
+OnDestroy: se ejecuta antes de eliminar un componente (o se oculta la etiqueta del componente)

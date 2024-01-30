@@ -6,13 +6,14 @@
                 <option value="baño">Trajes de baño</option>
                 <option value="superior">Prendas superiores</option>
                 <option value="inferior">Prendas inferiores </option>
+                <option value="conjunto">Conjunto</option>
                 <option value="interior">Ropa interior</option>
                 <option value="calzado">Calzado</option>
             </select>
         </ul>
     </div>
 
-    <ul id="ul-productos" >
+    <ul *ngIf="status!=false" id="ul-productos" >
         <li *ngFor="let a of allArticles" class="li-articulos">
             <h2>{{a.description}}</h2>
             <a class="image" [routerLink]="['/detalle/',a._id]">
