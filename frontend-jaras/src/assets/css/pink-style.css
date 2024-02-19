@@ -71,3 +71,13 @@ input[type="submit"]{
 footer{
     background-color: var(--rosajaras);
 }
+
+/* Style cart */
+.carth2{
+    background-color: var(--rosajaras);
+    border: 2px solid white;
+}
+.cartempty{
+    background-color: var(--rosajaras);
+    border: 2px solid white;
+}

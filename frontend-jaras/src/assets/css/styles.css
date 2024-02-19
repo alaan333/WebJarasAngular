@@ -151,7 +151,7 @@ header{
                 }
 
 .container{
-    margin-top: 0px;
+    padding-block: 12px;
     background-size: 100%;
     /* background-position: -53px 0px; */
 }

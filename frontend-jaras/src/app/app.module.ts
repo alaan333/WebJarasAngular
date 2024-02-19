@@ -13,6 +13,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { SearchComponent } from './components/search/search.component';
+import { CartComponent } from './components/cart/cart.component';
+import { SigninComponent } from './components/signin/signin.component';
 @NgModule({
   declarations: [ //declarations sirve para cargar nuestros componentes, pipes y directivas
     AppComponent,
@@ -24,10 +26,12 @@ import { SearchComponent } from './components/search/search.component';
     DetailComponent,
     EditComponent,
     SearchComponent,
+    CartComponent,
+    SigninComponent,
   ],
-  imports: [ //sirve para cargar modulos, de angular o creados por nosotros
+  imports: [ //sirve para cargar modulos, de Angular o creados por nosotros
     BrowserModule,
-    routing,
+    routing, 
     HttpClientModule,
     FormsModule
   ],

@@ -8,10 +8,11 @@ var app=express();
 
 var article_routes=require('./routes/article') 
 
+//middlewares
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
 
-//para configuracion de cabeceras 
+//configuration headers 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');

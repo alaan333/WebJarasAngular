@@ -9,7 +9,7 @@ declare var $:any; //solo para jquery
   selector: 'app-root', //selector: sirve para indicar en que etiqueta(<app-root></app-root>) o directiva se va a cargar este componente
   templateUrl: './app.component.html', //templateUrl: indica cual es la vista del componente
   styleUrls: ['./app.component.css'], //styleUrls: se podria utilizar para darle estilos al componente
-  providers:[ArticleService]
+  providers:[ArticleService] //para utilizar el servicio de otro componente(ArticleService)
 })
 export class AppComponent implements OnInit{ //para poder utilizar esta clase en otros archivos
   title = 'frontend-jaras';
@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{ //para poder utilizar esta clase en
   public url:string;
   public all_articles:Article[];
   public status:boolean;
+  public idUser:any;
   public fecha:any;
   public dia:any;
   public mes:any;
@@ -31,11 +32,13 @@ export class AppComponent implements OnInit{ //para poder utilizar esta clase en
     this.url=Global.url;
     this.status=false;
     this.control=false;
+    this.idUser = localStorage.getItem('user');
   }
 
   ngOnInit(): void {
     this.controlDate()
     this.sliderStar()
+    console.log(this.idUser)
   }
 
   //Slider del footer
@@ -82,7 +85,6 @@ export class AppComponent implements OnInit{ //para poder utilizar esta clase en
             this.all_articles.push(this.articles[i])
           }
         }
-        console.log('en appcomponent',this.all_articles.length)
         if(this.all_articles.length>0){
           this.status=true
         }
@@ -95,6 +97,14 @@ export class AppComponent implements OnInit{ //para poder utilizar esta clase en
       }
     )
   } 
+
+  signOut(){
+    var result=confirm('Cerrar sesión?')
+    if (result){
+      localStorage.removeItem('user')
+      location.reload()
+    }
+  }
 
   //Control fecha navideña
   controlDate(){

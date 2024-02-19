@@ -46,7 +46,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   getArticles(){
-    this._articleService.getArticles().subscribe(
+    this._articleService.getArticles().subscribe(  //susbribe es un metodo del observable, ya que getArticles() devuelve un observable
       response=>{
         if(response.articles){
           this.articles=response.articles;

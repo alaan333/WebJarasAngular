@@ -32,9 +32,11 @@
 
     <div id="login">
       <ul>
-        <li><a href="#">Iniciar sesión</a></li>
-        <li><a [routerLink]="['/registro']">Registrarse</a></li>
+        <li *ngIf="idUser==null" ><a [routerLink]="['/inicio-sesion']">Iniciar sesión</a></li>
+        <li *ngIf="idUser==null"><a [routerLink]="['/registro']">Registrarse</a></li>
+        <li *ngIf="idUser!=null"><a href="" (click)="signOut()">Cerrar sessión</a></li>
         <li class="addarticle-css"><a [routerLink]="['/agregar-articulo']" >Añadir articulo</a></li>
+        <li><a href="#">Administración</a></li>
       </ul>
     </div>
 
@@ -51,7 +53,7 @@
       
 
       <div id="carrito">
-        <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+        <li><a [routerLink]="['/carrito']"><i class="fa-solid fa-cart-shopping"></i></a></li>
       </div>
       <div id="social">
         <ul>
@@ -64,7 +66,7 @@
   </div>
   
   <div class="container">
-    <router-outlet></router-outlet>
+    <router-outlet></router-outlet> <!--etiqueta del sistema de rutas -->
   </div>
 
   <div id="menu-oculto">

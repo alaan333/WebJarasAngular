@@ -8,8 +8,8 @@ var router=express.Router();
 var multipart=require('connect-multiparty');//se necesita para que node trabaje con los files que suba
 var multipartMiddleware=multipart({uploadDir:'./uploads'})
 
-router.get('/home', articleController.home);
-router.post('/test',articleController.test);
+// router.get('/home', articleController.home);
+// router.post('/test',articleController.test);
 router.post('/save-article',articleController.saveArticle);
 router.get('/article/:id?', articleController.getArticle);
 router.get('/articles',articleController.getAllArticles);

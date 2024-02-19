@@ -1,6 +1,6 @@
 Primero se ejecuta en la consola npm init para crear el fichero package.json
     Ingresar instrucciones
-Segundo hay que instalar los paquetes y librerias con npm install
+Segundo hay que instalar los paquetes y librerias con npm install, para que node funcione como un framework, tambien para conectarnos a mongoDB
     npm install express --save (para trabajar con el protocolo framework http, --save para guardar en el proyecto actual)
     npm install body-parser --save (para convertir lo de la peticion a objeto json)
     npm install connect-multiparty --save (me permite subir archivos a mi backend, ej imagenes)

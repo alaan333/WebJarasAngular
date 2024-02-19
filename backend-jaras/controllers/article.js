@@ -1,23 +1,23 @@
 'use strict'
 
-const article = require('../models-articles/article');
-var Article=require('../models-articles/article')
+const article = require('../models/article');
+var Article=require('../models/article')
 var fs=require('fs')
 var path=require('path')
 
 var controller={
 
-    home:function(req,res){
-        return res.status(200).send({
-            message:'Home'
-        });        
-    },
+    // home:function(req,res){
+    //     return res.status(200).send({
+    //         message:'Home'
+    //     });        
+    // },
     
-    test:function(req,res){
-        return res.status(200).send({
-            message:'Test'
-        });        
-    },
+    // test:function(req,res){
+    //     return res.status(200).send({
+    //         message:'Test'
+    //     });        
+    // },
 
     //Guardar articulo en la base de datos
     saveArticle:(req,res)=>{
@@ -60,7 +60,7 @@ var controller={
             message:'No se encontro el articulo'
         })}
         else{
-            Article.findById(articleId,(err,article)=>{
+            Article.findById(articleId,(err,article)=>{  //findById searches objet on database with its id
                 if(err){
                     return res.status(500).send({
                         message:'Error al devolver datos'
@@ -81,7 +81,6 @@ var controller={
     },
 
     getAllArticles:(req,res)=>{
-        //Article.find({category: 'prenda inferior'}).exec((err,articles)=>{   // si queremos que haga un listado con alguna condicion, colocamos la condicion dentro de {}
         Article.find({}).exec((err,articles)=>{
             if(err){
                 return res.status(500).send({

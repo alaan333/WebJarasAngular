@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import{HttpClient, HttpHeaders} from '@angular/common/http'
-import { Observable } from "rxjs";
+import{HttpClient, HttpHeaders} from '@angular/common/http' //estos dos modulos son para hacer peticiones ajax a una url externa y modificar las cabeceras de esas peticiones
+import { Observable } from "rxjs"; //para recoger la informacion que nos devuelva el api rest cuando hagamos una peticion
 import { Article } from "../models/article";
 import { Global } from "./global";
 
@@ -18,8 +18,8 @@ export class ArticleService{
     }
 
     saveArticle(article:Article): Observable<any>{
-        let params=JSON.stringify(article);
-        let headers=new HttpHeaders().set('Content-Type','application/json');
+        let params=JSON.stringify(article); //para que article se transforme en un objeto json
+        let headers=new HttpHeaders().set('Content-Type','application/json'); 
 
         return this._http.post(this.url+'/save-article',params,{headers:headers});
     }

@@ -13,7 +13,7 @@
         </ul>
     </div>
 
-    <ul *ngIf="status!=false" id="ul-productos" >
+    <ul id="ul-productos" >
         <li *ngFor="let a of allArticles" class="li-articulos">
             <h2>{{a.description}}</h2>
             <a class="image" [routerLink]="['/detalle/',a._id]">
@@ -22,6 +22,6 @@
             <h3>${{a.price}}</h3>
         </li>
     </ul>
-    <div *ngIf="status==false" class="without-articles"><h3>No hay articulos disponibles en esta categoria</h3></div>
+    <div *ngIf="!status" class="without-articles"><h3>No hay articulos disponibles en esta categoria</h3></div>
 
 </div>

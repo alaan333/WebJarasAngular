@@ -1,0 +1,26 @@
+<div class="container-cart">
+    <h2 class="carth2">Carrito de compras</h2>
+    <ul id="ul-cart" >
+        <li *ngFor="let a of items_cart" class="li-articulos">
+            <a class="image" [routerLink]="['/detalle/',a._id]">
+                <img src="{{url+'/get-image/'+a.image}}" *ngIf="a.image" >
+            </a>
+            <div class="detail-cart">
+                <h4>{{a.description}}</h4>
+                <h4>{{a.season}}</h4>
+                <h4>{{a.color}}</h4>
+                <h3>${{a.price}}</h3>
+            </div>
+            <button (click)="deleteArticleCart(a._id)">Quitar</button>
+        </li>
+    </ul>
+    
+    <div *ngIf="items_cart.length >0" id="buy-confirm">
+        <h1>Cantidad articulos: {{items_cart.length}} -- TOTAL ${{totalbuy}}</h1>
+        <button class="confirmbutton">Confirmar compra</button>
+    </div>
+    <div class="cartempty" *ngIf="items_cart.length==0">
+        <h1>Carrito vacío, mira nuestros <a [routerLink]="['/productos']">productos</a></h1>
+    </div>
+
+</div>

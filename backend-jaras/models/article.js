@@ -5,7 +5,7 @@ var mongoose=require('mongoose');
 var schema=mongoose.Schema;
 
 var articleSchema=schema({
-    category:String,            //prenda superior,inferior,accesorio, calzado,etc
+    category:String,            
     typeArticle:String,             
     size:String,                
     season:String,
@@ -17,4 +17,4 @@ var articleSchema=schema({
     offsale:Number
 });
 
-module.exports=mongoose.model('Article',articleSchema)  //para tomar este esquema y utilizarlo como modelo
+module.exports=mongoose.model('Article',articleSchema) 

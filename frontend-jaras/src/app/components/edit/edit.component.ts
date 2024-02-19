@@ -47,7 +47,6 @@ export class EditComponent implements OnInit{
       error=>{
         console.log(<any>error)
       }
-      
     )
   }
 
@@ -59,7 +58,6 @@ export class EditComponent implements OnInit{
         if(response.article){
           //Subir imagen
           if(this.filesToUpload.length!=0){    //importante poner !=0 si no hay ninguna imagen para subir
-            console.log('llego hasta acac',this.filesToUpload)
             this._uploadService.makeFileRequest(Global.url+'/upload-image/'+response.article._id,[],this.filesToUpload,'image')
             .then((result:any)=>{
               this.status='succes';
