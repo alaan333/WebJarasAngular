@@ -9,9 +9,7 @@
             <label for="pass">Contraseña</label>
             <input type="password" name="pass"  [(ngModel)]="pass">
         </p>
-
         <input type="submit" value="Iniciar sesión" (click)="getUsers()" [disabled]="!email || !pass">
-
         <div>
             <h3 *ngIf="result=='failed'">Usuario o contraseña invalido</h3>
         </div>

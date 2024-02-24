@@ -1,10 +1,24 @@
 'use strict'
 
 var User=require('../models/user')
+const sendMail=require('../config/mailer');
+const {getToken, getTokenData}=require('../config/jwtoken');
 
 var controller={
+    sendEmail:async(req,res)=>{
+        var params=req.body
+        const token=getToken(params.email);
+        var email=params.email
+        const verify=await User.findOne({email})
+        if (verify!=null) return res.status(500).send({message:'No se pudo guardar el usuario'});
+        else{
+            sendMail(params.email,params.name,token)
+            return res.status(200).send()
+        }
+    },
 
-    saveUser:function(req,res){     //never (res,req) 
+    saveUser:async(req,res)=>{     //never (res,req)
+        
         var user=new User();
         var params=req.body;
 
@@ -14,17 +28,33 @@ var controller={
         user.password=params.password;
         user.cart=[];
 
-        user.save((err,userStored)=>{
-            if(err) res.status(500).send({message:'Error al guardar usuario'});
-            if(!userStored) return res.status(404).send({message:'No se pudo guardar el usuario'});
-
-            return res.status(200).send({user:userStored});
+        await user.save((err,userStored)=>{
+                if(err && err.code!=11000)  res.status(500).send({message:'Error al guardar usuario'});
+                if(!userStored) return res.status(404).send({message:'No se pudo guardar el usuario'});
+               
+                return res.status(200).send({user:userStored}); 
         })
+    },
+
+    confirm:async(req,res)=>{
+        const {token}=req.params;
+        var control=true;
+        const data = getTokenData(token);
+        if (data==null){
+            console.log('Data nula, token falso o vencido');
+            res.status(500).send({message:'Data nula, token falso o vencido'});
+            control=false
+        }
+        else {
+            console.log('Confirmacion valida '); 
+            return res.status(200).send(control)
+        }
+
     },
 
     getUser:(req,res)=>{
         var userId=req.params.id;
-    
+
         if(userId==null){return res.status(404).send({
             message:'No se encontro el articulo'
         })}
@@ -40,7 +70,7 @@ var controller={
                         message:'No se encontro el usuario'
                     })
                 };
-    
+
                 return res.status(200).send({
                     user
                 })
@@ -63,7 +93,7 @@ var controller={
     updateUser:(req,res)=>{
         var userId=req.params.id;
         var update=req.body;
-        
+
         User.findByIdAndUpdate(userId,update,(err,userUpdated)=>{
             if(err){
                 return res.status(500).send({

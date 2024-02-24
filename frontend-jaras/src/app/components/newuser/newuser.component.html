@@ -28,11 +28,8 @@
         </p>
         <input type="submit" value="Registrarse" [disabled]="!userForm.form.valid || pass!=user.password">
 
-        <div class="message success" *ngIf="status=='success'">
-            <h1>Usuario registrado</h1>
-        </div>
-        <div class="message failed" *ngIf="status=='failed'">
-            <h1>No se pudo registrar el usuario</h1>
+        <div class="message success" *ngIf="status">
+            <h1>{{message}}</h1>
         </div>
     </form>
 </div>

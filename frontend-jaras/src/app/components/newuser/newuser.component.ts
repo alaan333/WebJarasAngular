@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { User } from 'src/app/models/user'; 
-import { UploadService } from 'src/app/services/upload.service';
+import { User } from 'src/app/models/user';
 import { Global } from 'src/app/services/global';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-newuser',
@@ -13,34 +13,40 @@ import { UserService } from 'src/app/services/user.service';
 export class NewuserComponent {
   public title:string;
   public user:User 
-  public status:string;
+  public status:boolean;
   public save_user:any;
   public url:string;
   public pass:string=''
+  public message:string=''
 
   constructor(
-    private _userService: UserService
+    private _userService: UserService,
+    private _router: Router
   ){
     this.title='Registrar usuario'
     this.user=new User('','','','','',['']);
-    this.status=''
+    this.status=false;
     this.save_user=null;
     this.url=Global.urlUser
   }   
 
   onSubmit(form:any){
-    //Guardar datos basicos
-    this._userService.saveUser(this.user).subscribe(
+      localStorage.setItem('temp',JSON.stringify(this.user))
+      this._userService.sendMail(this.user).subscribe(
       response=>{
-        if(response.user){ 
-            this.status='success';
-            this.save_user=response.user;
-            form.reset()
-        }
-        else{this.status='failed'}
+        this.status=true;
+        this.message='Usuario registrado, registra tu correro para confirmar';
+        form.reset()
+        setTimeout(()=>{
+          this._router.navigate(['/inicio']);
+        }, 2000);
       },
-      error=>{console.log(error)}
+      error=>{
+        console.log(error);
+        this.status=true; 
+        this.message='Ya existe el correo en la base de datos';
+      }
     );
   }
-
 }
+

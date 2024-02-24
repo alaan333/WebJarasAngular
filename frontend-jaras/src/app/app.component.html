@@ -32,11 +32,12 @@
 
     <div id="login">
       <ul>
+        <li *ngIf="user!=null"><a>{{user.name}} {{user.surname}}</a></li>
         <li *ngIf="idUser==null" ><a [routerLink]="['/inicio-sesion']">Iniciar sesión</a></li>
         <li *ngIf="idUser==null"><a [routerLink]="['/registro']">Registrarse</a></li>
         <li *ngIf="idUser!=null"><a href="" (click)="signOut()">Cerrar sessión</a></li>
-        <li class="addarticle-css"><a [routerLink]="['/agregar-articulo']" >Añadir articulo</a></li>
-        <li><a href="#">Administración</a></li>
+        <li *ngIf="controlAdmin" class="addarticle-css"><a [routerLink]="['/agregar-articulo']" >Añadir articulo</a></li>
+        <li *ngIf="controlAdmin"><a href="#">Administración</a></li>
       </ul>
     </div>
 
@@ -53,7 +54,7 @@
       
 
       <div id="carrito">
-        <li><a [routerLink]="['/carrito']"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        <li><a [routerLink]="['/carrito']"><i class="fa-solid fa-cart-shopping"></i><span *ngIf="user!=null">{{user.cart.length}}</span></a></li>
       </div>
       <div id="social">
         <ul>
@@ -103,7 +104,7 @@
     </li>
   </ul>
   <div class="autor">
-    <a href="https://www.linkedin.com/in/alan-felix-9b3387248/"><h3>DESARROLLADO POR ALAN EMMANUEL FELIX &copy;</h3></a>
+    <a href="https://www.linkedin.com/in/alan-felix-9b3387248/"><h3>DESARROLLADO POR ALAN EMMANUEL FELIX &copy; <i class="fa-brands fa-linkedin"></i></h3></a>
   </div>
 </footer>
 

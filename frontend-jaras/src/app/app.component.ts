@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { ArticleService } from './services/article.service';
 import { Article } from './models/article';
 import { Global } from './services/global';
+import { UserService } from './services/user.service';
 
 declare var $:any; //solo para jquery
 
@@ -9,7 +10,7 @@ declare var $:any; //solo para jquery
   selector: 'app-root', //selector: sirve para indicar en que etiqueta(<app-root></app-root>) o directiva se va a cargar este componente
   templateUrl: './app.component.html', //templateUrl: indica cual es la vista del componente
   styleUrls: ['./app.component.css'], //styleUrls: se podria utilizar para darle estilos al componente
-  providers:[ArticleService] //para utilizar el servicio de otro componente(ArticleService)
+  providers:[ArticleService,UserService] //para utilizar el servicio de otro componente(ArticleService)
 })
 export class AppComponent implements OnInit{ //para poder utilizar esta clase en otros archivos
   title = 'frontend-jaras';
@@ -23,9 +24,12 @@ export class AppComponent implements OnInit{ //para poder utilizar esta clase en
   public dia:any;
   public mes:any;
   public control:boolean; //para *ngIf de la etiqueta decoradora navideña
+  public controlAdmin:boolean=false;
+  public user:any;
 
   constructor(
     private _articleService:ArticleService,
+    private _userService:UserService
   ){
     this.articles=[];
     this.all_articles=[]
@@ -36,25 +40,15 @@ export class AppComponent implements OnInit{ //para poder utilizar esta clase en
   }
 
   ngOnInit(): void {
+    this.themeSelector()
     this.controlDate()
     this.sliderStar()
-    console.log(this.idUser)
+    this.cAdmin()
+    if(this.idUser!=null){this.getUser(this.idUser)}
   }
 
-  //Slider del footer
-
-  sliderStar(){
-    $(document).ready(function(){
-      $(document).ready(function(){
-        $('.sliderfooter').bxSlider({
-          auto: true,
-          autoControls: true,
-          stopAutoOnClick: true,
-          pager: true,
-        });
-      });
-  
-      var theme=$('#theme');
+  themeSelector(){
+     var theme=$('#theme');
         $('.theme-pink').click(function(){
         theme.attr('href','assets/css/pink-style.css')
         });
@@ -67,7 +61,18 @@ export class AppComponent implements OnInit{ //para poder utilizar esta clase en
         $('.theme-darkpink').click(function(){
           theme.attr('href','assets/css/darkpink-style.css')
         })
-    });
+  }
+
+  //Slider del footer
+  sliderStar(){
+      $(document).ready(function(){
+        $('.sliderfooter').bxSlider({
+          auto: true,
+          autoControls: true,
+          stopAutoOnClick: true,
+          pager: true,
+         });
+      });
   }
 
   //funcion de busqueda
@@ -98,6 +103,17 @@ export class AppComponent implements OnInit{ //para poder utilizar esta clase en
     )
   } 
 
+  getUser(id:any){
+    this._userService.getUser(id).subscribe(
+      response=>{
+        this.user=response.user; 
+      },
+      error=>{
+        console.log(<any>error)
+      }
+    )
+  }
+
   signOut(){
     var result=confirm('Cerrar sesión?')
     if (result){
@@ -114,6 +130,12 @@ export class AppComponent implements OnInit{ //para poder utilizar esta clase en
     this.fecha=[this.dia, this.mes]
     if((this.fecha[0]>=8 && this.fecha[1]==11) || (this.fecha[0]>=1 && this.fecha[0]<=6 && this.fecha[1]==0)){
       this.control=true;
+    }
+  }
+
+  cAdmin(){
+    if(this.idUser=='65d9676d6e9aaa6c1f78ff4d'){
+      this.controlAdmin=true
     }
   }
 }

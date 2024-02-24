@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import{HttpClient, HttpHeaders} from '@angular/common/http' //estos dos modulos son para hacer peticiones ajax a una url externa y modificar las cabeceras de esas peticiones
+import{HttpClient, HttpHeaders, HttpStatusCode} from '@angular/common/http' //estos dos modulos son para hacer peticiones ajax a una url externa y modificar las cabeceras de esas peticiones
 import { Observable } from "rxjs"; //para recoger la informacion que nos devuelva el api rest cuando hagamos una peticion
 import { Global } from "./global";
 import { User } from "../models/user";
@@ -15,9 +15,22 @@ export class UserService{
 
     saveUser(user:User): Observable<any>{
         let params=JSON.stringify(user); 
-        let headers=new HttpHeaders().set('Content-Type','application/json'); 
-
+        let headers=new HttpHeaders().set('Content-Type','application/json');
+       
         return this._http.post(this.url+'/save-user',params,{headers:headers});
+    }
+
+    sendMail(user:User): Observable<any>{
+        let params=JSON.stringify(user); 
+        let headers=new HttpHeaders().set('Content-Type','application/json');
+       
+        return this._http.post(this.url+'/send-mail',params,{headers:headers});
+    }
+    
+
+    confirmUser(token:any):Observable<any>{
+        let headers=new HttpHeaders().set('Content-Type','application/json');
+        return this._http.get(this.url+'/user/confirm/'+token,{headers:headers})
     }
 
     getUser(id:any):Observable<any>{

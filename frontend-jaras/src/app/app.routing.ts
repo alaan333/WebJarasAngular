@@ -11,6 +11,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { SearchComponent } from './components/search/search.component';
 import { CartComponent } from './components/cart/cart.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { ConfirmUserComponent } from './components/confirm-user/confirm-user.component';
 
 const appRoutes: Routes=[
     //FORMATO DE RUTA EN ANGULAR DENTRO DE UN OBJETO JSON{}: {path:'nombre de la ruta',component:componenteDeLaRuta}
@@ -24,6 +25,7 @@ const appRoutes: Routes=[
     {path:'editar/:id',component:EditComponent},
     {path:'search',component:SearchComponent},
     {path: 'carrito',component:CartComponent},
+    {path: 'confirmar/:token',component:ConfirmUserComponent},
     {path:'**',component:HomepageComponent}
 ];
 

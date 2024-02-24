@@ -232,7 +232,7 @@ header{
             .autor{
                 display: flex;
                 align-items: center;
-                justify-content: end;
+                justify-content: flex-end;
                 height: 30px;
                 width: 100%;
                 background-color: black;
@@ -240,9 +240,10 @@ header{
             }
                 .autor a{
                     color: white;
-                    width: 22%;
+                    width: 23%;
                     padding: 5px;
                 }
+
                 .autor h3:hover{    
                     color: rgb(163, 5, 163);
                 }

@@ -1,0 +1,6 @@
+<div *ngIf="!status" >
+    <h3>Confirmar usuario</h3>
+    <button (click)="confirm()">Confirmar</button>
+</div>
+
+<h1 *ngIf="status">{{message}}</h1>

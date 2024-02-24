@@ -15,6 +15,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { SearchComponent } from './components/search/search.component';
 import { CartComponent } from './components/cart/cart.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { ConfirmUserComponent } from './components/confirm-user/confirm-user.component';
 @NgModule({
   declarations: [ //declarations sirve para cargar nuestros componentes, pipes y directivas
     AppComponent,
@@ -28,6 +29,7 @@ import { SigninComponent } from './components/signin/signin.component';
     SearchComponent,
     CartComponent,
     SigninComponent,
+    ConfirmUserComponent,
   ],
   imports: [ //sirve para cargar modulos, de Angular o creados por nosotros
     BrowserModule,

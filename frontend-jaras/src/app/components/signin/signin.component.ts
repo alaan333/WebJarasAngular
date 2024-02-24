@@ -36,7 +36,10 @@ export class SigninComponent {
         for(let i=0; i<this.users.length; i++){
           if(this.users[i].email==this.email && this.users[i].password==this.pass){
             localStorage.setItem('user',this.users[i]._id);
-            this._router.navigate(['/inicio']);
+            // this._router.navigate(['/inicio']);
+            
+            //for refresh login section
+            location.replace(origin+'/inicio')
             this.result='success';
           }
           else{this.result='failed'}

@@ -6,7 +6,7 @@ var Schema=mongoose.Schema;
 var UserSchema= Schema({
     name:String,
     surname:String,
-    email:String,
+    email:{type:String,unique:true}, //unique for not repeat on database
     password:String,
     cart:Array
 });

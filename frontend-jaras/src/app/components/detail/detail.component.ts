@@ -69,19 +69,20 @@ export class DetailComponent implements OnInit{
   //Get id user from local store for edit
  
   getUser(){
-    if(localStorage.key!=null){
+    if(localStorage.getItem('user')!=null){
       this.idUser = localStorage.getItem('user');
     }
-    this._userService.getUser(this.idUser).subscribe(
-      response=>{
-        this.user=response.user; 
-      },
-      error=>{
-        console.log(<any>error)
-      }
-    )
+    if(this.idUser!=undefined){
+      this._userService.getUser(this.idUser).subscribe(
+        response=>{
+          this.user=response.user; 
+        },
+        error=>{
+          console.log(<any>error)
+        }
+      )  
+    }  
   }
-
   putCart(id:any){
     var result=confirm('Agregar al carrito?');
     var n=false;
@@ -96,6 +97,7 @@ export class DetailComponent implements OnInit{
               response=>{
                 if(response.user){
                   this.save_user=response.user
+                  location.reload()
                 }
               },
               error=>{console.log(error)}
