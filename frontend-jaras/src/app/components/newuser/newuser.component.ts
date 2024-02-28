@@ -44,6 +44,7 @@ export class NewuserComponent {
       error=>{
         console.log(error);
         this.status=true; 
+        form.reset()
         this.message='Ya existe el correo en la base de datos';
       }
     );

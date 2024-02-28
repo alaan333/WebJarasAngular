@@ -1,5 +1,47 @@
 .container-signin{
-    background-color: red;
-    width: 40%;
+    width: 30%;
     margin-inline: auto;
 }
+h3{
+    padding: 15px;
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+form{
+    padding: 15px;
+}   
+    p{
+        margin-bottom: 10px;
+    }
+    label{
+        font-size: 23px;
+    }
+    input[type="email"],[type="password"]{
+        margin-block: 15px;
+        width: 50%;
+        border: transparent;
+        background-color: transparent;
+        border-bottom: 2px solid white;
+    }
+        input[type="email"]:focus,[type="password"]:focus{
+            outline: none;
+            background-color: white;
+            width: 60%;
+            transition: 1000ms;
+        }
+
+    input[type="submit"]{
+        padding: 10px;
+        border: transparent;
+        cursor: pointer;
+    }
+        input[type="submit"]:hover{
+            box-shadow: 4px 4px 8px white;
+        }
+    input[type="submit"][disabled]{
+        cursor: no-drop;
+        box-shadow: none;
+    }
+    .error{
+        text-align: center;
+    }

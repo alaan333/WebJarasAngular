@@ -17,12 +17,14 @@ export class DetailComponent implements OnInit{
   public user:any;
   public save_user:any;
   public idUser:any;
+  public idAdmin:string='65d9676d6e9aaa6c1f78ff4d';
+  public status:boolean=false;
 
   constructor(
     private _articleService: ArticleService,
     private _userService:UserService,
     private _router: Router,
-    private _route:ActivatedRoute
+    private _route:ActivatedRoute,
   ){
     this.url=Global.url;
     this.article=Object;
@@ -76,6 +78,9 @@ export class DetailComponent implements OnInit{
       this._userService.getUser(this.idUser).subscribe(
         response=>{
           this.user=response.user; 
+          if(this.user._id==this.idAdmin){
+            this.status=true
+          }
         },
         error=>{
           console.log(<any>error)
@@ -83,32 +88,38 @@ export class DetailComponent implements OnInit{
       )  
     }  
   }
-  putCart(id:any){
-    var result=confirm('Agregar al carrito?');
-    var n=false;
-    if (result){
-      this._articleService.getArticle(id).subscribe(
-        response=>{
-          this.article=response.article
-            // añadir al array cart del objeto User
-            this.user.cart.push(this.article._id)
-            //ahora editarlo
-            this._userService.editUser(this.user).subscribe(
-              response=>{
-                if(response.user){
-                  this.save_user=response.user
-                  location.reload()
-                }
-              },
-              error=>{console.log(error)}
-            );
-        },
-        error=>{console.log(error)}      
-      )
+  putCart(id:string){
+    if(this.user==undefined){this._router.navigate(['/inicio-sesion'])}
+    else{
+      var result=confirm('Agregar al carrito?');
+      var n=false;
+      if (result){
+        this._articleService.getArticle(id).subscribe(
+          response=>{
+            this.article=response.article
+              if(this.user.cart.includes(this.article._id)){
+                alert('El articulo ya se encuentra en el carrito')
+              }
+              else{
+                // Add to the cart array of the User object
+                this.user.cart.push(this.article._id);
+                //now update user
+                this._userService.editUser(this.user).subscribe(
+                  response=>{
+                    if(response.user){
+                      this.save_user=response.user
+                      location.reload()
+                    }
+                  },
+                  error=>{console.log(error)}
+                );
+              }
+          },
+          error=>{console.log(error)}      
+        )
+      }
     }
   }
-
-
 };
 
 

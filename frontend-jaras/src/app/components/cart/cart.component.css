@@ -59,13 +59,15 @@
         .confirmbutton{
             width: 200px;
         }
+
     .cartempty{
-        height: 50px;
+        height: auto;
         padding: 12px;
         margin-top: 12px;
+        text-align: center;
     }
-        .cartempty h1 a{
+        .cartempty h2 a{
             display: inline;
             color:inherit;
-            text-decoration:underline;
+            text-decoration: underline;
         }

@@ -40,7 +40,7 @@ header{
 .container{
     background-image: url(../imagesforcss/body-image1.jpg);
 }
-.container-add h2,form{
+form,h2,h3{
     background: var(--rosajaras)
 }
 

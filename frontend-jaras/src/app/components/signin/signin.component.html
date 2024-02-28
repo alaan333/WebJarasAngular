@@ -2,15 +2,15 @@
     <h3>Inicio sesión</h3>
     <form>
         <p>
-            <label for="email">Correo</label>
+            <label for="email">Correo</label> <br>
             <input type="email" name="email"  [(ngModel)]="email">
         </p>
         <p>
-            <label for="pass">Contraseña</label>
+            <label for="pass">Contraseña</label><br>
             <input type="password" name="pass"  [(ngModel)]="pass">
         </p>
         <input type="submit" value="Iniciar sesión" (click)="getUsers()" [disabled]="!email || !pass">
-        <div>
+        <div class="error">
             <h3 *ngIf="result=='failed'">Usuario o contraseña invalido</h3>
         </div>
     </form>

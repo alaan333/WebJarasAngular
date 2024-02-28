@@ -17,7 +17,7 @@
                         <button class="hover-button buy-button">Comprar</button>
                         <button class="hover-button add-button" (click)="putCart(article._id)" [routerLink]="['/productos']">Agregar al carrito</button>
                     </div>
-                    <div class="del-edit">
+                    <div *ngIf="status" class="del-edit">
                         <button (click)="deleteArticle(article._id)" class="delete hover-button">Borrar</button>
                         <button [routerLink]="['/editar/',article._id]" class="edit hover-button">Editar</button>
                     </div>      

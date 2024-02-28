@@ -1,25 +1,39 @@
 <div class="container-category">
-    <div class="filter">
+    <div class="menu">
         <ul>
-            <select id="filtro" name="cate" (change)="getFiltro($event)">
-                <option value="all">Todos</option>
-                <option value="baño">Trajes de baño</option>
-                <option value="superior">Prendas superiores</option>
-                <option value="inferior">Prendas inferiores </option>
-                <option value="conjunto">Conjunto</option>
-                <option value="interior">Ropa interior</option>
-                <option value="calzado">Calzado</option>
-            </select>
+            <li>
+                <div class="filter">
+                    <label for="filter">Categoría</label>
+                    <select id="filtro" name="cate" (change)="getFiltro($event)">
+                        <option value="all">Todos</option>
+                        <option value="baño">Trajes de baño</option>
+                        <option value="superior">Prendas superiores</option>
+                        <option value="inferior">Prendas inferiores </option>
+                        <option value="conjunto">Conjunto</option>
+                        <option value="interior">Ropa interior</option>
+                        <option value="calzado">Calzado</option>
+                    </select>
+            </div>
+            </li>
+            <li>
+                <div class="price">
+                    <label for="price">Ordenar por precio</label>
+                    <select name="price" id="price" (change)="sortPrice($event)">
+                        <option value="minor">Menor precio</option>
+                        <option value="major">Mayor precio</option>
+                    </select>
+                </div>
+            </li>
         </ul>
     </div>
 
-    <ul id="ul-productos" >
+    <ul id="ul-productos" *ngIf="allArticles.length > 0">
         <li *ngFor="let a of allArticles" class="li-articulos">
-            <h2>{{a.description}}</h2>
+            <h3>{{a.description}}</h3>
             <a class="image" [routerLink]="['/detalle/',a._id]">
                 <img src="{{url+'/get-image/'+a.image}}" *ngIf="a.image" >
             </a>
-            <h3>${{a.price}}</h3>
+            <h1>${{a.price}}</h1>
         </li>
     </ul>
     <div *ngIf="!status" class="without-articles"><h3>No hay articulos disponibles en esta categoria</h3></div>

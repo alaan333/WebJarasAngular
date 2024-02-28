@@ -14,11 +14,13 @@ export class CategoriesComponent implements OnInit {
   public articles:Article[];
   public url:string;
   public filtro:string='all';
+  public price:string=''
   public allArticles:Article[];
-  public status:boolean
+  public status:boolean;
 
   constructor(
     private _articleService:ArticleService
+
   ){
     this.articles=[];
     this.url=Global.url;
@@ -34,6 +36,15 @@ export class CategoriesComponent implements OnInit {
   getFiltro(f:any){
     this.filtro=f.target.value;
     this.ngOnInit()
+  }
+  sortPrice(p:any){
+    this.price=p.target.value
+    if(this.price=='minor'){
+      this.allArticles.sort((a,b)=>a.price-b.price);
+    }
+    if(this.price=='major'){
+      this.allArticles.sort((a,b)=>b.price-a.price);
+    }
   }  
 
   getArticlesSelector(){

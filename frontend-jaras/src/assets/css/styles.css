@@ -14,6 +14,13 @@
     text-decoration: none;
 }
 
+select{
+    text-transform: uppercase;
+}
+select:focus{
+    outline: none;
+}
+
 header{
     margin-top: 0px;
     height: 154px;
@@ -183,7 +190,7 @@ header{
     .theme-darkpink{
         background-color: black;
         color: var(--rosajaras);
-        display: none;
+        /* display: none; */
     }
 
 .menu-res{
