@@ -2,7 +2,7 @@
     width: 40%;
     margin-left: 10%;
 }
-    .container-newuser h2{
+    h2{
         padding: 10px;
         margin-bottom: 10px;
     }
@@ -21,22 +21,60 @@
                 background-color: transparent;
                 border-bottom: 2px solid white;
             }
-            input:focus{
-                outline: none;
-                background-color: white;
-                width: 60%;
-                transition: 1000ms;
+            .sub-goo ul{
+                width: 50%;
+                display: flex;
+                flex-direction:column;
+                justify-content: space-around;
             }
-            input[type="submit"]{
-                margin-bottom: 15px;
-                padding: 10px;
-                border: transparent;
-                cursor: pointer;
-            }
-                input[type="submit"]:hover{
-                    box-shadow: 0px 0px 8px white;
+                .sub-goo li{
+                    margin-bottom: 15px;
                 }
-            input[type="submit"][disabled]{
-                cursor: no-drop;
-                box-shadow: none;
-            }
+                input:focus{
+                    outline: none;
+                    background-color: white;
+                    width: 60%;
+                    transition: 1000ms;
+                }
+                input[type="submit"]{
+                    padding: 10px;
+                    margin-block: 15px;
+                    border: transparent;
+                    cursor: pointer;
+                }
+                    input[type="submit"]:hover{
+                        box-shadow: 0px 0px 8px white;
+                    }
+                input[type="submit"][disabled]{
+                    cursor: no-drop;
+                    box-shadow: none;
+                }
+                .logingoogle{
+                    padding-block: 15px;
+                }
+                .logingoogle button{
+                    width: 30%;
+                    margin: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    padding: 3px;
+                    border: transparent;
+                    background-color: rgb(235, 96, 96);
+                    color: white;
+                    filter: blur(2px);
+                }
+                    .logingoogle button:hover{
+                        /* background-color: rgb(209, 67, 67); */
+                        cursor: no-drop;
+                    }
+                    .logingoogle img{
+                        height: 25px;
+                    }
+.women-png{
+    position:absolute;
+    z-index: 2;
+    height: 400px;
+    top: 200px;
+    left: 530px;
+}

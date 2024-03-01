@@ -3,6 +3,7 @@ import { User } from 'src/app/models/user';
 import { Global } from 'src/app/services/global';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { AuthGoogleService } from 'src/app/services/auth-google.service';
 
 @Component({
   selector: 'app-newuser',
@@ -21,7 +22,8 @@ export class NewuserComponent {
 
   constructor(
     private _userService: UserService,
-    private _router: Router
+    private _router: Router,
+    private _AuthGoogleService:AuthGoogleService
   ){
     this.title='Registrar usuario'
     this.user=new User('','','','','',['']);
@@ -49,5 +51,10 @@ export class NewuserComponent {
       }
     );
   }
+
+  // loginGoogle(){
+  //   this._AuthGoogleService.initLogin()
+  //   this._AuthGoogleService.login()
+  // }
 }
 

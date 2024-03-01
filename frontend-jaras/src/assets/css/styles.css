@@ -20,7 +20,9 @@ select{
 select:focus{
     outline: none;
 }
-
+h1,h2,h3{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 header{
     margin-top: 0px;
     height: 154px;

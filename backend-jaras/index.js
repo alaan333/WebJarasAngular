@@ -3,13 +3,13 @@
 var mongoose=require('mongoose');
 var app = require('./app-article');
 var appUser=require('./app-user')
+var urlDB=require('./dataBase')
 
 var port=3232;
 var portUser=3333;
 
 //database
-const password='GyNcBS8C0fXF5Rso'
-const url='mongodb+srv://AlanJaras:'+password+'@clusterzero.tamdwcu.mongodb.net/backendwebjaras'
+const url=urlDB
 
 //for conect to database
 mongoose.Promise=global.Promise;

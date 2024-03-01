@@ -81,3 +81,14 @@ footer{
     background-color: var(--rosajaras);
     border: 2px solid white;
 }
+
+/* New User */
+.container-newuser{
+    box-shadow: 0 10px 20px 10px rgba(255, 0, 0, 0.5);
+}
+.container-newuser h2{
+    box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.5);
+}
+.logingoogle{
+    background-color: var(--rosajaras);
+}

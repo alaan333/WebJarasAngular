@@ -9,6 +9,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 import { AppComponent } from './app.component';
 import { OffsaleComponent } from './components/offsale/offsale.component';
@@ -22,7 +23,6 @@ import { SearchComponent } from './components/search/search.component';
 import { CartComponent } from './components/cart/cart.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { ConfirmUserComponent } from './components/confirm-user/confirm-user.component';
-
 
 @NgModule({
   declarations: [ //declarations sirve para cargar nuestros componentes, pipes y directivas
@@ -49,7 +49,8 @@ import { ConfirmUserComponent } from './components/confirm-user/confirm-user.com
     MatPaginatorModule,
     MatInputModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    OAuthModule.forRoot()
   ],
   providers: [ //sirve para cargar servicios
     appRoutingProviders

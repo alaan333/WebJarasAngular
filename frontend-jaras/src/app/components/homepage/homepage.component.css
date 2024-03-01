@@ -25,7 +25,6 @@
     width: 100%;
     padding-block: 30px;
     text-align: center;
-    margin-top: -60px;
 }
     .slogan h1{
         font-size: 70px;
@@ -42,7 +41,6 @@
         background: rgba(255, 255,255,0.3);
         border-top: 2px solid white;
         border-bottom: 2px solid white;
-        margin-top: 70px;
     }
 .article-home{
     width: 95%;
